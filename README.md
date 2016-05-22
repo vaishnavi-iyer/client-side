@@ -48,6 +48,7 @@ You might like to check out - the [International Space Station API](http://where
 
 - Spin up an API you've written (e.g. `json-cats`)
 - Hit the that API and render the results using a new client-side template (go write a new one). 
+  (GOTCHA ALERT! Think about how this will work on GH-pages... Only use a previous API to test this locally - switch out for one on the interwobs for when you push this up, discuss in your pair why this is important)
 
 ## Release 3
 
