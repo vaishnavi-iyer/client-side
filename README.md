@@ -1,70 +1,72 @@
 # Client-side
 
-In this exercise we're going to be looking at what we can do client-side. 
-That looks like : 
- - client-side requests
- - client-side rendering
+In this exercise you'll look at:
 
-We'll be using some familiar tools like github-pages, along with some shmancy tooling to help us bundle and push there.
-For rendering, we'll be using Handlebars (again!), but we'll be using Browserify to teach the browser how to use it easily.
+ - Client-side requests
+ - Client-side rendering
 
-The tools in this setup: 
+You'll be using some familiar tools like github-pages, along with some shmancy tooling to help us bundle and push to GitHub. For rendering, we'll be using Handlebars (again!), but we'll be using Browserify so the browser can use it easily.
 
-- [browserify](https://www.npmjs.com/package/browserify) - make our sweet node browser-ready
-- [handlebars](http://handlebarsjs.com/) - template rendering!
-- [hbsfy](https://www.npmjs.com/package/hbsfy) - a browserify transform for hbs
-- [xhr](https://www.npmjs.com/package/xhr) - a request-module that works browser-side
-- [gh-pages](https://www.npmjs.com/package/gh-pages) - crazy easy gh-pages deployment
+The tools in this setup include: 
+
+- [Browserify](https://www.npmjs.com/package/browserify) - to build our assets so they are ready for the browser
+- [Handlebars](http://handlebarsjs.com/) - so we can do template rendering
+- [hbsfy](https://www.npmjs.com/package/hbsfy) - a browserify transform for Handlebars
+- [xhr](https://www.npmjs.com/package/xhr) - a request-module that works in the browser
+- [gh-pages](https://www.npmjs.com/package/gh-pages) - so we can deploy to gh-pages
 
 ---
 
 ## Release 0
 
-- **FORK** the repo to your personal account. **The purpose is to set up a gh-pages site**, so the hihi-based repo won't work
-- Read the `package.json`, in particular the scripts. See if you can figure out what each line does (even roughly) and guess how they are related.
-- Check your git remotes, then try running the scripts to check your guesses about what they do. You should be able to use the npm scripts to auto-set up a github page for you.
+- **Fork** this repo to your personal account. **So we can use a gh-pages site**. The cohort-specific organisation won't work.
+- Read the scripts in `package.json`. Be sure you understand what each line does.
+- Ensure your Git remotes are correct. You should be able to use the npm scripts to setup a GitHub page for you.
 
-**NOTE** - gh-pages will act on the remote you have set up at `origin` ... so be careful.
+**NOTE** - gh-pages will act on the remote you have set up at `origin` ... so be sure your setup is correct.
 
 These commands might be useful in terminal: 
-```bash
+
+```sh
 git remote -v
 git remote --help
 git remote add --help
 git remote remove --help
 ```
+
+
 ## Release 1
 
-
-Find an API you you or that is easy to use (don't use one that needs authentication/ keys for this one - no twitter)
-You might like to check out - the [International Space Station API](http://wheretheiss.at/w/developer)
+Find an API you've created or that is easy to use. Don't use one that needs authentication or keys for this one (no twitter). You might like to check out the [International Space Station API](http://wheretheiss.at/w/developer).
 
 ![NZ from the ISS](nz_from_iss.png)
 
-- replace the existing api get request to get something back from your API and `console.log` it
-- Not things returned from the API rendering on your page using handlebars 
+Replace the GET requests of the existing API to get something back from the API of your choice and `console.log` it.
+
 
 ## Release 2
 
-- Spin up an API you've written (e.g. `json-cats`)
-- Hit the that API and render the results using a new client-side template (go write a new one). 
-  (GOTCHA ALERT! Think about how this will work on GH-pages... Only use a previous API to test this locally - switch out for one on the interwobs for when you push this up, discuss in your pair why this is important)
+- Spin up an API you've written.
+- Hit the that API and render the results using a new client-side template. You will probably need to write a new one. 
+- GOTCHA ALERT! Think about how this will work on GitHub Pages. Only use a previous API to test this locally. Switch out for one on the web when you push this up, discuss in your pair why this is important.
+
 
 ## Release 3
 
-- Add a listener to a button on the page, which kicks off a request, then renders the results using a template.
+- Add an event listener to a button on a page, which kicks off a request, then renders the results using a template.
+
 
 ## Release 4
 
-This setup is something I just pulled together because I like handlebars.  Go and look for some other tools and potential setups. 
+This setup uses Handlebars and is just one option.  Look for another template engine and other potential setups. 
 
-Go inquire about different tools: 
-- client-side templating - Jade and Hyperscript are two I hear mentioned
-- AJAX / client-side requesting - Jquery AJAX is another common one you might see, there might be other options
-- bundling tools - there's another one called webpack that gets some attention...
+Seek out and inquire about different tools: 
 
-Which aspects here need testing. Go inquire about how people test client-side rendering or API requests.
+- Client-side templating: Jade and Hyperscript options.
+- AJAX/client-side requesting: jQuery AJAX is another option and there are many more
+- Bundling tools: webpack, gulp and grunt are other options
 
-Once you've had a look at that stuff, maybe have a look at some productivity boosts : 
-- could you use something to watch your files and re-bundle? Maybe checkout our budo, watchify, ... 
+Once you've had a look at that stuff, have a look at some productivity boosts: 
+
+- Could you use something to watch your files and re-bundle automatically? Maybe checkout budo or watchify.
 
