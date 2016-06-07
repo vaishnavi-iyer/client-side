@@ -1,12 +1,17 @@
 var xhr = require('xhr')
-var example = require('./views/example.hbs')
+var greeting = require('./views/greeting.hbs')
 
-xhr.get('https://api.wheretheiss.at/v1/satellites', function (err, data) {
+var endpoint = 'https://api.wheretheiss.at/v1/satellites'
+
+xhr.get(endpoint, function (err, data) {
   if (err) {
-    console.log(err)
+    console.error(err)
   }
 
-  console.log(data.body) // in case you're curious
+  // In case you're curious
+  console.log(data.body) // FYI: data.body is a string
 
-  document.body.innerHTML = example({ name: 'Space' })
+  // Replace 'Space' below with the response
+  var target = document.getElementsByTagName('main')[0]
+  target.innerHTML = greeting({name: 'Space'})
 })
