@@ -1,5 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var xhr=require("xhr"),greeting=require("./views/greeting.hbs"),endpoint="https://api.wheretheiss.at/v1/satellites";xhr.get(endpoint,function(e,n){e&&console.error(e),console.log(n.body);var r=document.getElementsByTagName("main")[0];r.innerHTML=greeting({name:"Space"})});
+var xhr=require("xhr"),greeting=require("./views/greeting.hbs"),endpoint="https://api.wheretheiss.at/v1/satellites";xhr.get(endpoint,function(e,n){e&&console.error(e),console.log(n.body[0].name);var r=document.getElementsByTagName("main")[0];r.innerHTML=greeting({name:n.body[0].name})});
 },{"./views/greeting.hbs":30,"xhr":27}],2:[function(require,module,exports){
 function forEach(r,t,o){if(!isFunction(t))throw new TypeError("iterator must be a function");arguments.length<3&&(o=this),"[object Array]"===toString.call(r)?forEachArray(r,t,o):"string"==typeof r?forEachString(r,t,o):forEachObject(r,t,o)}function forEachArray(r,t,o){for(var n=0,a=r.length;n<a;n++)hasOwnProperty.call(r,n)&&t.call(o,r[n],n,r)}function forEachString(r,t,o){for(var n=0,a=r.length;n<a;n++)t.call(o,r.charAt(n),n,r)}function forEachObject(r,t,o){for(var n in r)hasOwnProperty.call(r,n)&&t.call(o,r[n],n,r)}var isFunction=require("is-function");module.exports=forEach;var toString=Object.prototype.toString,hasOwnProperty=Object.prototype.hasOwnProperty;
 
@@ -68,6 +68,7 @@ function forEach(r,t,o){if(!isFunction(t))throw new TypeError("iterator must be 
 module.exports=require("./dist/cjs/handlebars.runtime")["default"];
 },{"./dist/cjs/handlebars.runtime":4}],23:[function(require,module,exports){
 module.exports=require("handlebars/runtime")["default"];
+
 },{"handlebars/runtime":22}],24:[function(require,module,exports){
 function isFunction(o){var t=toString.call(o);return"[object Function]"===t||"function"==typeof o&&"[object RegExp]"!==t||"undefined"!=typeof window&&(o===window.setTimeout||o===window.alert||o===window.confirm||o===window.prompt)}module.exports=isFunction;var toString=Object.prototype.toString;
 },{}],25:[function(require,module,exports){
