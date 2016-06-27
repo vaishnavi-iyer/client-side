@@ -15,6 +15,7 @@ xhr.get(endpoint, function (err, data) {
       console.log(err)
     }
   // Replace 'Space' below with the response
+    console.log(data.body)
     var newdata = JSON.parse(data.body)
     console.log(newdata[0])
     var target = document.getElementsByTagName('main')[0]
