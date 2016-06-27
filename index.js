@@ -15,11 +15,10 @@ xhr.get(endpoint, function (err, data) {
       console.log(err)
     }
   // Replace 'Space' below with the response
-    console.log(data.body)
     var newdata = JSON.parse(data.body)
-    console.log(newdata[0])
-    var target = document.getElementsByTagName('main')[0]
-    target.innerHTML += greeting({name: newdata[0]})
-
+    for (var key in newdata){
+      var target = document.getElementsByTagName('main')[0]
+      target.innerHTML += greeting({name: key + ' : ' + newdata[key]})
+    }
   })
 })
