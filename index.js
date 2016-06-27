@@ -9,7 +9,8 @@ xhr.get(endpoint, function (err, data) {
   }
 
   var data = JSON.parse(data.body)
-  xhr.get(endpoint+ '/'+ data[0].id, function(err, data){
+  var newendpoint = endpoint+ '/'+ data[0].id
+  xhr.get(newendpoint, function(err, data){
     if (err){
       console.log(err)
     }
