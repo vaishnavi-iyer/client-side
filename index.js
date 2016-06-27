@@ -15,5 +15,5 @@ var data = JSON.parse(data.body)
 console.log(data)
   // Replace 'Space' below with the response
   var target = document.getElementsByTagName('main')[0]
-  target.innerHTML = greeting({name: data.body[0].name})
+  target.innerHTML = greeting({name: 'Space'})
 })
