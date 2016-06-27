@@ -8,7 +8,7 @@
     "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css} dist'",
     "push": "gh-pages -d dist",
     "deploy": "npm run build && npm run dist && npm run push",
-    "budo": " budo index.js"
+    "budo": " budo index.js:bundle.js --watch-glob '**/*.{html,css,hbs}'  -- -t hbsfy -g uglifyify"
   },
   "keywords": [],
   "author": "",
