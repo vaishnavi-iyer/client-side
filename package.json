@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "tape test.js | tap-spec",
     "build": "browserify -t hbsfy index.js -g uglifyify > bundle.js",
     "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css} dist'",
     "push": "gh-pages -d dist",
@@ -16,9 +17,12 @@
   "devDependencies": {
     "browserify": "^13.0.0",
     "budo": "^8.1.0",
+    "cheerio": "^0.20.0",
     "gh-pages": "^0.11.0",
     "handlebars": "^4.0.5",
     "hbsfy": "^2.5.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.0",
     "uglifyify": "^3.0.1",
     "xhr": "^2.2.0"
   }

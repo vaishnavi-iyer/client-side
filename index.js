@@ -1,6 +1,5 @@
 var xhr = require('xhr')
 var greeting = require('./views/greeting.hbs')
-// var budo = require('budo')
 
 var endpoint = 'https://api.wheretheiss.at/v1/satellites'
 
