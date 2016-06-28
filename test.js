@@ -4,7 +4,7 @@ var cheerio = require('cheerio')
 var fs = require('fs')
 
 test('test the greeting template', function (t) {
-  var source = fs.readFileSync(__dirname + '/views/greeting.hbs').toString('utf8')
+  var source = fs.readFileSync(__dirname + '/views/greeting.hbs', 'utf-8')
   var template = Handlebars.compile(source);
   var result = template({"name": 'Benedict'})
   console.log(result)
